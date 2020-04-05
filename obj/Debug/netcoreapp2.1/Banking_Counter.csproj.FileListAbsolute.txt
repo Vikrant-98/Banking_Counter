@@ -1,0 +1,11 @@
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\bin\Debug\netcoreapp2.1\Banking_Counter.deps.json
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\bin\Debug\netcoreapp2.1\Banking_Counter.runtimeconfig.json
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\bin\Debug\netcoreapp2.1\Banking_Counter.runtimeconfig.dev.json
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\bin\Debug\netcoreapp2.1\Banking_Counter.dll
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\bin\Debug\netcoreapp2.1\Banking_Counter.pdb
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\obj\Debug\netcoreapp2.1\Banking_Counter.csprojAssemblyReference.cache
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\obj\Debug\netcoreapp2.1\Banking_Counter.csproj.CoreCompileInputs.cache
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\obj\Debug\netcoreapp2.1\Banking_Counter.AssemblyInfoInputs.cache
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\obj\Debug\netcoreapp2.1\Banking_Counter.AssemblyInfo.cs
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\obj\Debug\netcoreapp2.1\Banking_Counter.dll
+C:\Users\The Daddy\source\repos\Banking_Counter\Banking_Counter\obj\Debug\netcoreapp2.1\Banking_Counter.pdb
