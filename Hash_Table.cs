@@ -8,7 +8,9 @@ namespace Banking_Counter
     {
         Random random = new Random();
         /// <summary>
-        /// 
+        /// Created the array and linklist called by Linked_List class
+        /// Hash Chaining used
+        /// Keep track of index if null then kep it as null and if not null add it to linked list
         /// </summary>
         static public int INPUT = int.Parse(Console.ReadLine());
         public Node[] hashTable = new Node[INPUT];
@@ -39,7 +41,7 @@ namespace Banking_Counter
                     node = hashTable[index];
                     while (node != null)
                     {
-                        Console.Write("| account number : " + node.accountNumber + " Bank balance :"+node.bankBalance+" |->");
+                        Console.Write("| account Number : " + node.accountNumber + " Bank Balance :"+node.bankBalance+" |->");
                         node = node.next;
                     }
                Console.WriteLine("null");
