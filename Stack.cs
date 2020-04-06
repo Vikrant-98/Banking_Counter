@@ -10,6 +10,8 @@ namespace Banking_Counter
         public Node node = null;
         /// <summary>
         /// New node get added in the list and use it as Stack
+        /// Random object assigning value to accoutn number and bank balance (5 Digits)
+        /// Local variables input1 and input2 is used to store the account number and bank balance
         /// </summary>
         public void LinkList()
         {

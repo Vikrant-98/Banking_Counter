@@ -1,72 +1,71 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Banking_Counter
 {
-    class Linked_List
+    class Link_Hash
     {
-        static void Main(string[] args)
-        {
-            List link = new List();
-            Console.WriteLine("How Many User you want and number of hash table ");
-            int user1 = int.Parse(Console.ReadLine());
-            Link_Hash link_Hash = new Link_Hash();
-            for (int index = 0; index < user1; index++)
-            {
-                link_Hash.Hash_Chaining();
-            }
-            link_Hash.Traverse();
-            link_Hash.Bank();
-            int user2 = int.Parse(Console.ReadLine());
-            for (int index = 0; index < user2; index++)
-            {
-                link.LinkList();
-            }
-            link.Bank();
-        }
-    }
-    /// <Node_Created>
-    /// local input as data in constructor  
-    /// </Node_Created>
-    class Node
-    {
-        public int accountNumber,bankBalance;
-        public Node next;
-        /// <Node>
-        /// Node get Created along with two parameters and link to another node
-        /// </Node>
-        /// <param accountNumber="input1"></param>
-        /// <param bankBalance="input2"></param>
-        public Node(int input1,int input2)
-        {
-            accountNumber = input1;
-            bankBalance = input2;
-            next = null;
-        }
-    }
-    class List : Queue
-    {
+        Random random = new Random();
         /// <summary>
-        /// Process of treversing the linklist as Queue
-        /// Here Transaction function called to perform Trancacton on account
+        /// 
         /// </summary>
+        static public int INPUT = int.Parse(Console.ReadLine());
+        public Node[] hashTable = new Node[INPUT];
+        Node node = null;
+        public void Hash_Chaining()
+        {
+            int input1 = random.Next(), input2 = random.Next();
+            Node myNode = new Node((input1 % 90000) + 10000, input2 % 1000000);
+            int index = ( input1 % 900 + 100 ) % INPUT;
+            if (hashTable[index] == null)
+            {
+                hashTable[index] = myNode;
+            }
+            else
+            {
+                node = hashTable[index];
+                while (node.next != null)
+                {
+                    node = node.next;
+                }
+                node.next = myNode;
+            }
+        }
+        public void Traverse()
+        {
+            for (int index = 0 ; index < INPUT ; index++ )
+            {
+                    node = hashTable[index];
+                    while (node != null)
+                    {
+                        Console.Write("| account number : " + node.accountNumber + " Bank balance :"+node.bankBalance+" |->");
+                        node = node.next;
+                    }
+               Console.WriteLine("null");
+            }
+        }
         public void Bank()
         {
-            node = headNode;
-            while (node.next != null)
+            for (int index = 0; index < INPUT; index++)
             {
+                node = hashTable[index];
+                while (node.next != null)
+                {
+                    Transaction();
+                    node = node.next;
+                }
                 Transaction();
-                node = node.next;
             }
-            Transaction();
         }
         /// <summary>
         /// Local amount is declared for input
         /// Checking about the amount is valid to widthdraw
         /// </summary>
-        public void Withdraw()                                                  
+        public void Withdraw()
         {
             Console.WriteLine("Enter amount want to withdraw :");
-            int amount = int.Parse(Console.ReadLine());                         
+            int amount = int.Parse(Console.ReadLine());
             if (node.bankBalance - amount > 0)
             {
                 node.bankBalance = node.bankBalance - amount;
@@ -81,11 +80,11 @@ namespace Banking_Counter
         /// Local amount is declared for input
         /// Checking about the amount is valid to widthdraw
         /// </summary>
-        public void Deposit()                                                   
+        public void Deposit()
         {
             Console.WriteLine("Enter amount want to deposit :");
             int amount = int.Parse(Console.ReadLine());
-            if (amount > 0)                                                     
+            if (amount > 0)
             {
                 node.bankBalance = node.bankBalance + amount;
             }
@@ -105,22 +104,22 @@ namespace Banking_Counter
             Console.WriteLine("Users balance is " + node.bankBalance);
             Console.WriteLine("1).For Withdraw\n2).For Deposit");
             int choice1 = 0;
-            while (choice1 == 0)                                                                
+            while (choice1 == 0)
             {
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:
-                        Withdraw();                                                           
+                        Withdraw();
                         break;
                     case 2:
-                        Deposit();                                                            
+                        Deposit();
                         break;
                     default:
                         Console.WriteLine("No match found");
                         break;
                 }
-                Console.WriteLine("Press 0 For continue your transaction or any number to exit:");       
+                Console.WriteLine("Press 0 For continue your transaction or any number to exit:");
                 choice1 = int.Parse(Console.ReadLine());
             }
         }

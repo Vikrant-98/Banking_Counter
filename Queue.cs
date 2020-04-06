@@ -9,7 +9,9 @@ namespace Banking_Counter
         public Node headNode = null;
         public Node node = null;
         /// <summary>
-        /// New node get added in the list
+        /// Node get added in the list and used it as Queue
+        /// Random object assigning value to accoutn number and bank balance (5 Digits)
+        /// Local variables input1 and input2 is used to store the account number and bank balance
         /// </summary>
         public void LinkList()
         {
@@ -19,6 +21,7 @@ namespace Banking_Counter
             if (headNode == null)
             {
                 headNode = myNode;
+                Console.WriteLine("Account Number : " + headNode.accountNumber + " and Bank Balance : " + headNode.bankBalance);
             }
             else
             {
@@ -28,21 +31,8 @@ namespace Banking_Counter
                     node = node.next;
                 }
                 node.next = myNode;
-            }
-        }
-        /// <summary>
-        /// Printing the list asper Queue order
-        /// </summary>
-        public void Print()
-        {
-            node = headNode;
-            Console.WriteLine("Users in Queue");
-            while (node.next != null)
-            {
                 Console.WriteLine("Account Number : " + node.accountNumber + " and Bank Balance : " + node.bankBalance);
-                node = node.next;
             }
-            Console.WriteLine("Account Number : " + node.accountNumber + " and Bank Balance : " + node.bankBalance);
         }
     }
 }
